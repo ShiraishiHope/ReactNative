@@ -15,24 +15,31 @@
     ];
     const renderItem = ({ index, item }) => (
         <View style={{ flexDirection:'row' }}>
-            <Text>{item} </Text>
+            <Text style={styles.objective}>{item} </Text>
 
         </View>)
 
     export default function App() {
 
+        const handleButtonPress = () => {
+            console.log("Button pressed");
+        };
         return (
 
         <View style={styles.container}>
-          <StatusBar style="auto" />
+          <StatusBar style="auto"/>
           <Text style={styles.text}>What's 42?</Text>
-            <FlatList style={styles.list}
+            <View style={styles.list}>
+
+            <FlatList contentContainerStyle={styles.containerList}
                 data={sampleGoals}
                 renderItem={renderItem} />
+            </View>
      <TextInput
             style={styles.input}
             placeholder={"Don't write here"}
-          />
+
+     />
           <Button
               title="Don't Press me"
           />
@@ -46,7 +53,8 @@
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
+
+
       },
       text: {
         color: '#F00',
@@ -60,9 +68,11 @@
         padding: 10,
       },
         objective: {
-            color: '#F00',
+            alignSelf: 'center',
         },
-        list: {
-
+        containerList: {
+          flex: 1,
+          justifyContent:'center',
+          
         }
     });
