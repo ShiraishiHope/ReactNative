@@ -24,7 +24,7 @@ export default function App() {
         setObjectivesList(newObjectivesList);
     }
     const renderItem = ({index, item}) => (
-        <View style={{flexDirection: 'row'}}>
+        <View style={{flexDirection: 'row',justifyContent:'space-between'}}>
             <Text style={styles.objective}>{item} </Text>
             <DeleteButton
                 style={styles.deleteButton}
@@ -39,9 +39,9 @@ export default function App() {
     return (
 
         <View style={styles.container}>
-            <StatusBar style="auto"/>
+
+
             <Text style={styles.text}>What's 42?</Text>
-            <View style={styles.list}>
 
                 <FlatList
                     contentContainerStyle={styles.containerList}
@@ -61,7 +61,7 @@ export default function App() {
                     onPress={handleButtonPress}
                 />
                 </View>
-            </View>
+
 
 
         </View>
@@ -73,12 +73,13 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-
+        justifyContent: 'center',
 
     },
     text: {
         color: '#F00',
         fontWeight: 'bold',
+        marginTop : 50
     },
     input: {
         height: 40,
@@ -89,16 +90,15 @@ const styles = StyleSheet.create({
     },
     objective: {
         alignSelf: 'center',
+        marginRight : 10
     },
     containerList: {
         flex: 1,
         justifyContent: 'center',
     },
-    deleteButton: {
-        alignSelf: 'flex-end',
-        backgroundColor: '#F00',
-    },
+
     inputView: {
         alignSelf: 'center',
+        flexDirection: 'row'
     },
 });

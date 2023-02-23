@@ -18,9 +18,10 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
         paddingHorizontal: 16,
         borderRadius: 10,
-        alignSelf: 'flex-end',
         borderWidth:2,
         borderColor:'#000',
+            backgroundColor: '#F00',
+
     },
     text: {
         color: '#fff',
