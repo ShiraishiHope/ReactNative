@@ -1,5 +1,5 @@
-    import { StatusBar } from 'expo-status-bar';
-    import {StyleSheet, Text, View, FlatList, TextInput, Button} from 'react-native';
+
+    import {StyleSheet, Text, View, FlatList, TextInput, Button, StatusBar} from 'react-native';
 
     const sampleGoals = [
       "Faire les courses",
@@ -13,31 +13,30 @@
       "Organiser un meetup autour de la tech",
       "Faire un triathlon",
     ];
+    const renderItem = ({ index, item }) => (
+        <View style={{ flexDirection:'row' }}>
+            <Text>{item} </Text>
 
-    const Objective = ({title}) => (
-        <View>
-            <Text>{title}</Text>
-        </View>);
+        </View>)
+
     export default function App() {
-      return (
+
+        return (
+
         <View style={styles.container}>
-
+          <StatusBar style="auto" />
           <Text style={styles.text}>What's 42?</Text>
-            <FlatList
+            <FlatList style={styles.list}
                 data={sampleGoals}
-                renderItem={({ item }) => <Objective title={item} />} />
-
-
-            />
-         <View> <TextInput
+                renderItem={renderItem} />
+     <TextInput
             style={styles.input}
             placeholder={"Don't write here"}
           />
           <Button
               title="Don't Press me"
           />
-        </View>
-          <StatusBar style="auto" />
+
     </View>
       );
     }
@@ -62,5 +61,8 @@
       },
         objective: {
             color: '#F00',
+        },
+        list: {
+
         }
     });
