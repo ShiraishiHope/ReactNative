@@ -1,4 +1,4 @@
-
+    import {useState} from 'react';
     import {StyleSheet, Text, View, FlatList, TextInput, Button, StatusBar} from 'react-native';
 
     const sampleGoals = [
@@ -13,17 +13,28 @@
       "Organiser un meetup autour de la tech",
       "Faire un triathlon",
     ];
-    const renderItem = ({ index, item }) => (
-        <View style={{ flexDirection:'row' }}>
-            <Text style={styles.objective}>{item} </Text>
-
-        </View>)
 
     export default function App() {
-
+        const [objective, setObjectives] = useState('')
+        const [objectivesList, setObjectivesList] = useState(sampleGoals)
+        const handleDelete = (index) => {
+            const newObjectivesList = [...objectivesList];
+            newObjectivesList.splice(index, 1);
+            setObjectivesList(newObjectivesList);
+        }
+        const renderItem = ({ index, item }) => (
+        <View style={{ flexDirection:'row' }}>
+            <Text style={styles.objective}>{item} </Text>
+            <Button
+                style={styles.deleteButton}
+                title="Delete" onPress={() => handleDelete(index)}
+                onPress={() => handleDelete(index)}
+            />
+        </View>)
         const handleButtonPress = () => {
-            console.log("Button pressed");
-        };
+            setObjectivesList([...objectivesList, objective]);
+            setObjective('');
+        }
         return (
 
         <View style={styles.container}>
@@ -31,14 +42,19 @@
           <Text style={styles.text}>What's 42?</Text>
             <View style={styles.list}>
 
-            <FlatList contentContainerStyle={styles.containerList}
-                data={sampleGoals}
-                renderItem={renderItem} />
+            <FlatList
+                contentContainerStyle={styles.containerList}
+                data={objectivesList}
+                renderItem={renderItem}
+                keyExtractor={(item, index) => index.toString()}
+            />
+
             </View>
      <TextInput
             style={styles.input}
             placeholder={"Don't write here"}
-
+            value={objective}
+            onChangeText={(text)=> setObjectives(text)}
      />
           <Button
               title="Don't Press me"
@@ -73,6 +89,9 @@
         containerList: {
           flex: 1,
           justifyContent:'center',
-          
-        }
+        },
+        deleteButton: {
+            alignSelf: 'center',
+            backgroundColor: '#F00',
+        },
     });
