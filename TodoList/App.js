@@ -11,9 +11,11 @@ import {
     TouchableWithoutFeedback,
     Keyboard,
     TextInput,
-    ImageBackground
+
 } from 'react-native';
 import DeleteButton from './components/DeleteButton';
+import BackgroundImage from './components/BackgroundImage';
+
 
 const sampleGoals = [
     "Faire les courses",
@@ -29,7 +31,6 @@ const sampleGoals = [
 ];
 
 export default function App() {
-
     const [objective, setObjectives] = useState('')
     const [objectivesList, setObjectivesList] = useState(sampleGoals)
     const [selectedObjective, setSelectedObjective] = useState('');
@@ -115,14 +116,11 @@ export default function App() {
         ))
         setObjectivesList(updateList)
     }
-    const image = {uri: '/assets/background'}
 
     /*START OF RETURN*/
     return (
         <View style={styles.container}>
-            <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-
-            </ImageBackground>
+            <BackgroundImage/>
             <Text style={styles.text}>To-do List</Text>
             <FlatList
                 contentContainerStyle={styles.containerList}
