@@ -5,10 +5,12 @@ import {
     View,
     FlatList,
     Pressable,
+    Button,
     Modal,
     KeyboardAvoidingView,
     Platform,
     TouchableWithoutFeedback,
+    TouchableNativeFeedback,
     Keyboard,
     TextInput,
 
@@ -33,7 +35,8 @@ const sampleGoals = [
 export default function App() {
     const [objective, setObjectives] = useState('')
     const [objectivesList, setObjectivesList] = useState(sampleGoals)
-    const [selectedObjective, setSelectedObjective] = useState('');
+    const [selectedObjective, setSelectedObjective] = useState('')
+    const [selectedObjectiveIndex, setSelectedObjectiveIndex] = useState(-1)
     const [modalVisible, setModalVisible] = useState(false)
     const handleDelete = (index) => {
         const newObjectivesList = [...objectivesList];
@@ -41,7 +44,7 @@ export default function App() {
         setObjectivesList(newObjectivesList);
     }
     const renderItem = ({index, item}) => (
-        <>
+
         <Pressable
             style={{flexDirection: 'row', justifyContent: 'space-between'}}
             onPress={() => {
@@ -55,47 +58,7 @@ export default function App() {
                 </Text>
             </View>
         </Pressable>
-    <Modal
-        animationType={'slide'}
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-            setModalVisible(!modalVisible)
-        }}>
-        <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-                <TextInput
-                    style={styles.textStyle}
-                    value={selectedObjective}
-                    onChangeText={(text) => setSelectedObjective(text)}
-                />
-                <View style={{ flexDirection: 'row' }}>
-                    <Pressable
-                        style={[styles.button, styles.buttonClose]}
-                        onPress={() => {
-                            setModalVisible(!modalVisible);
-                            setSelectedObjective('');
-                        }}>
-                        <Text style={styles.textStyle}>Cancel</Text>
-                    </Pressable>
-                    <Pressable
-                        style={[styles.button, styles.buttonSave]}
-                        onPress={() => {
-                            editButtonPress(selectedObjective,index);
-                            setModalVisible(!modalVisible);
-                            setSelectedObjective('');
-                        }}>
-                        <Text style={styles.textStyle}>Save</Text>
-                    </Pressable>
-                    <DeleteButton
-                        title="Delete" onPress={() => handleDelete(index)}
-                        onPress={() => handleDelete(index)}
-                    />
-                </View>
-            </View>
-        </View>
-    </Modal>
-        </>
+
     )
     /*            */
     const addButtonPress = (item) => {
@@ -109,6 +72,7 @@ export default function App() {
         setObjectivesList(newObjectivesList)
         setModalVisible(false)
         setSelectedObjective('')
+        Keyboard.dismiss()
     }
     const editButtonPress = (item, index) => {
         const updateList = objectivesList.map((currentItem, currentIndex) => (
@@ -128,7 +92,58 @@ export default function App() {
                 renderItem={renderItem}
                 keyExtractor={(item, index) => index.toString()}
             />
-
+            <Modal
+                animationType={'slide'}
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                    setModalVisible(!modalVisible)
+                }}>
+                <View style={styles.centeredView}>
+                    <View style={styles.modalView}>
+                        <TextInput
+                            style={styles.textStyle}
+                            value={selectedObjective}
+                            onChangeText={(text) => setSelectedObjective(text)}
+                        />
+                        <View style={{ flexDirection: 'row' }}>
+                            <Pressable
+                                style={[styles.button, styles.buttonClose]}
+                                onPress={() => {
+                                    setModalVisible(!modalVisible);
+                                    setSelectedObjective('');
+                                }}>
+                                <Text style={styles.textStyle}>Cancel</Text>
+                            </Pressable>
+                            <Pressable
+                                style={[styles.button, styles.buttonSave]}
+                                onPress={() => {
+                                    editButtonPress(selectedObjective,index);
+                                    setModalVisible(!modalVisible);
+                                    setSelectedObjective('');
+                                }}>
+                                <Text style={styles.textStyle}>Save</Text>
+                            </Pressable>
+                            <DeleteButton
+                                title="Delete" onPress={() => handleDelete(index)}
+                                onPress={() => handleDelete(index)}
+                            />
+                        </View>
+                    </View>
+                </View>
+            </Modal>
+            <View style={styles.inputView}>
+                <TextInput
+                    style={styles.input}
+                    placeholder={"New Task"}
+                    value={objective}
+                    onChangeText={(text) => setObjectives(text)}
+                />
+                <Button
+                    title="Add"
+                    onPress={addButtonPress}
+                />
+            </View>
         </View>
     );
 }
