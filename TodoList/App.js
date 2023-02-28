@@ -9,7 +9,9 @@ import {
     KeyboardAvoidingView,
     Platform,
     TouchableWithoutFeedback,
-    Keyboard, TextInput
+    Keyboard,
+    TextInput,
+    ImageBackground
 } from 'react-native';
 import DeleteButton from './components/DeleteButton';
 
@@ -84,16 +86,17 @@ export default function App() {
                         }}>
                         <Text style={styles.textStyle}>Save</Text>
                     </Pressable>
+                    <DeleteButton
+                        title="Delete" onPress={() => handleDelete(index)}
+                        onPress={() => handleDelete(index)}
+                    />
                 </View>
             </View>
         </View>
     </Modal>
         </>
     )
-    /*            <DeleteButton
-                    title="Delete" onPress={() => handleDelete(index)}
-                    onPress={() => handleDelete(index)}
-                />*/
+    /*            */
     const addButtonPress = (item) => {
         const newObjectivesList = [...objectivesList]
         const index = newObjectivesList.indexOf(item)
@@ -112,10 +115,14 @@ export default function App() {
         ))
         setObjectivesList(updateList)
     }
+    const image = {uri: '/assets/background'}
 
     /*START OF RETURN*/
     return (
         <View style={styles.container}>
+            <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+
+            </ImageBackground>
             <Text style={styles.text}>To-do List</Text>
             <FlatList
                 contentContainerStyle={styles.containerList}

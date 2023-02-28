@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9219b4e5-afc0-48ae-9818-d364430770e8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/RNative/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNative/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNative/.idea/RNative.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNative/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNative/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNative/app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNative/assets/adaptive-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNative/assets/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNative/assets/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNative/assets/splash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNative/babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNative/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNative/package.json" beforeDir="false" />
-    </list>
+    <list default="true" id="9219b4e5-afc0-48ae-9818-d364430770e8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +14,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2M8SF0SKTvAo0e7v0Sj8kUBlhYX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,7 +24,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/admin/Desktop/Projet/ReactNative",
+    "last_opened_file_path": "D:/Coding/Projects/ReactNative/TodoList",
     "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
@@ -51,6 +38,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677147608762</updated>
       <workItem from="1677147610127" duration="98000" />
+      <workItem from="1677603322654" duration="57000" />
     </task>
     <servers />
   </component>

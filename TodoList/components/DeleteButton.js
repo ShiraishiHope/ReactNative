@@ -15,12 +15,12 @@ const DeleteButton = ({ onPress }) => {
 
 const styles = StyleSheet.create({
     button: {
-        paddingVertical: 8,
-        paddingHorizontal: 16,
-        borderRadius: 10,
-        borderWidth:2,
-        borderColor:'#000',
-            backgroundColor: '#F00',
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2,
+        margin: 5,
+        minWidth: 80,
+        alignItems: 'center',
 
     },
     text: {
