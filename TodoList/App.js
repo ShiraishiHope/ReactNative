@@ -33,15 +33,18 @@ const sampleGoals = [
 ];
 
 export default function App() {
+
     const [objective, setObjectives] = useState('')
     const [objectivesList, setObjectivesList] = useState(sampleGoals)
     const [selectedObjective, setSelectedObjective] = useState('')
     const [selectedObjectiveIndex, setSelectedObjectiveIndex] = useState(-1)
     const [modalVisible, setModalVisible] = useState(false)
     const handleDelete = (index) => {
-        const newObjectivesList = [...objectivesList];
-        newObjectivesList.splice(index, 1);
-        setObjectivesList(newObjectivesList);
+        const newObjectivesList = [...objectivesList]
+        newObjectivesList.splice(index, 1)
+        setObjectivesList(newObjectivesList)
+        setModalVisible(false)
+        setSelectedObjective('')
     }
     const renderItem = ({index, item}) => (
 
@@ -49,6 +52,7 @@ export default function App() {
             style={{flexDirection: 'row', justifyContent: 'space-between'}}
             onPress={() => {
                 setSelectedObjective(item)
+                setSelectedObjectiveIndex(index)
                 setModalVisible(true)
 
             }}>
@@ -107,6 +111,19 @@ export default function App() {
                             onChangeText={(text) => setSelectedObjective(text)}
                         />
                         <View style={{ flexDirection: 'row' }}>
+                            <DeleteButton
+                                title="Delete" onPress={() => handleDelete(index)}
+                                onPress={() => handleDelete(selectedObjectiveIndex)}
+                            />
+                            <Pressable
+                                style={[styles.button, styles.buttonSave]}
+                                onPress={() => {
+                                    editButtonPress(selectedObjective,selectedObjectiveIndex);
+                                    setModalVisible(!modalVisible);
+                                    setSelectedObjective('');
+                                }}>
+                                <Text style={styles.textStyle}>Save</Text>
+                            </Pressable>
                             <Pressable
                                 style={[styles.button, styles.buttonClose]}
                                 onPress={() => {
@@ -115,19 +132,6 @@ export default function App() {
                                 }}>
                                 <Text style={styles.textStyle}>Cancel</Text>
                             </Pressable>
-                            <Pressable
-                                style={[styles.button, styles.buttonSave]}
-                                onPress={() => {
-                                    editButtonPress(selectedObjective,index);
-                                    setModalVisible(!modalVisible);
-                                    setSelectedObjective('');
-                                }}>
-                                <Text style={styles.textStyle}>Save</Text>
-                            </Pressable>
-                            <DeleteButton
-                                title="Delete" onPress={() => handleDelete(index)}
-                                onPress={() => handleDelete(index)}
-                            />
                         </View>
                     </View>
                 </View>
@@ -139,7 +143,7 @@ export default function App() {
                     value={objective}
                     onChangeText={(text) => setObjectives(text)}
                 />
-                <Button
+                <Button style={styles.addButton}
                     title="Add"
                     onPress={addButtonPress}
                 />
@@ -162,11 +166,30 @@ const styles = StyleSheet.create({
         marginTop: 50,
         fontSize: 20,
     },
-
-
     inputView: {
-        alignSelf: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        padding: 10,
+        marginVertical: 10,
+    },
+    input: {
+        flex: 1,
+        marginLeft: 10,
+        fontSize: 16,
+        color: '#000',
+    },
+    addButton: {
+        backgroundColor: '#007AFF',
+        borderRadius: 10,
+        padding: 10,
+    },
+    buttonText: {
+        color: '#fff',
+        fontSize: 16,
     },
     centeredView: {
         flex: 1,
@@ -191,13 +214,6 @@ const styles = StyleSheet.create({
     },
     keyboardAvoidingContainer: {
         flex: 1,
-    },
-    input: {
-        flex: 1,
-        marginRight: 10,
-        paddingBottom: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: '#ccc',
     },
     objective: {
         alignSelf: 'center',
