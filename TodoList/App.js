@@ -143,10 +143,17 @@ export default function App() {
                     value={objective}
                     onChangeText={(text) => setObjectives(text)}
                 />
-                <Button style={styles.addButton}
+                <TouchableNativeFeedback
+                    onPress={addButtonPress}
+                    background={TouchableNativeFeedback.Ripple('#007AFF', false)}>
+                    <View style={styles.addButton}>
+                        <Text style={styles.buttonText}>Add</Text>
+                    </View>
+                </TouchableNativeFeedback>
+{/*                <Button style={styles.addButton}
                     title="Add"
                     onPress={addButtonPress}
-                />
+                />*/}
             </View>
         </View>
     );
