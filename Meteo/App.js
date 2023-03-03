@@ -3,7 +3,8 @@ import {ActivityIndicator, StyleSheet, Text, View, Image, ScrollView} from 'reac
 import Constants from "expo-constants";
 import * as Location from "expo-location";
 import axios from "axios";
-import CurrentWeather from "./components/CurrentWeather";
+import WeeklyWeather from "./components/WeeklyWeather";
+
 const apiUrl = (lat, lon) => `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=f21195c07b10c55ee15a8f363c1b3713&units=metric`;
 export default function App() {
     const [loading, setLoading] = useState(true)
@@ -39,7 +40,12 @@ export default function App() {
     }
     return (
         <View style={styles.container}>
-            <CurrentWeather data = {data}/>
+            <View style={styles.upper}>
+                <Text>Test</Text>
+            </View>
+            <View style={styles.lower}>
+                <WeeklyWeather data={data} />
+            </View>
         </View>
     )
 }
@@ -49,6 +55,14 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#6A7',
         alignItems: 'center',
+        justifyContent: 'center',
+    },
+    upper: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    lower: {
+        flex: 1,
         justifyContent: 'center',
     },
 });
