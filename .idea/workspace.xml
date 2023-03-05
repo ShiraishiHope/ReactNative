@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9219b4e5-afc0-48ae-9818-d364430770e8" name="Changes" comment="">
+    <list default="true" id="9219b4e5-afc0-48ae-9818-d364430770e8" name="Changes" comment="readme update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoList/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Meteo/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Meteo/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,19 +25,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Volumes/THAWSPACE/Lessons/ReactNative",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Coding/Projects/ReactNative&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="ReactNative" />
@@ -63,13 +63,61 @@
       <updated>1677147608762</updated>
       <workItem from="1677147610127" duration="98000" />
       <workItem from="1677603322654" duration="57000" />
-      <workItem from="1677771601240" duration="24000" />
-      <workItem from="1677830299709" duration="12057000" />
+      <workItem from="1677787844570" duration="44000" />
+      <workItem from="1677787899207" duration="670000" />
+      <workItem from="1677795418451" duration="354000" />
+      <workItem from="1677795798025" duration="1155000" />
+      <workItem from="1677865264837" duration="1018000" />
+      <workItem from="1678041366293" duration="1657000" />
     </task>
+    <task id="LOCAL-00001" summary="readme update">
+      <created>1677795728722</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677795728722</updated>
+    </task>
+    <task id="LOCAL-00002" summary="readme update">
+      <created>1677795906889</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677795906889</updated>
+    </task>
+    <task id="LOCAL-00003" summary="readme update">
+      <created>1677796010600</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677796010600</updated>
+    </task>
+    <task id="LOCAL-00004" summary="readme update">
+      <created>1677796249911</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677796249911</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="readme update" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

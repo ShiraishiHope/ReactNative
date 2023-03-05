@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {View, Image, Text, StyleSheet, FlatList, Button} from "react-native";
-import {isSameDay} from "date-fns";
 const getIcon = (icon) => `http://openweathermap.org/img/wn/${icon}@4x.png`
 const WeeklyWeather = ({data}) => {
     const [weeklyWeather, setWeeklyWeather] = useState(null)
@@ -40,40 +39,65 @@ const WeeklyWeather = ({data}) => {
 
     const renderItem = ({item}) => {
         return (
-            <View style={styles.item}>
-                <Text>{item.day}</Text>
-                <Text>{item.hour}H</Text>
-                <Text>{item.temp}°C</Text>
-                <Text>{item.weather}</Text>
-                <Text>{item.humidity}%</Text>
-                <Image source={{uri: getIcon(item.weatherIcon)}} style={{width: 50, height: 50}} />
+            <View style={styles.listItem}>
+                <Text style={styles.font}>{item.hour}H</Text>
+                <Text style={styles.listItemText}  style={styles.font}>{item.temp}°C</Text>
+                <Text style={styles.listItemText}  style={styles.font}>{item.humidity}%</Text>
+                <Image source={{uri: getIcon(item.weatherIcon)}} style={{width: 30, height: 30}} />
             </View>
         );
     }
 
     return (
         <>
-            <FlatList
-                data={weeklyWeather}
-                renderItem={renderItem}
-                keyExtractor={(item) => item.id.toString()}
-            />
+            <View style={styles.hourly}>
+                <Text style={styles.hourlyText} style={styles.font}>Hourly</Text>
+            </View>
+            <View style={styles.listContainer}>
+                <FlatList
+                    data={weeklyWeather}
+                    renderItem={renderItem}
+                    keyExtractor={(item) => item.id.toString()}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                />
+            </View>
         </>
 
     )
 }
 export default WeeklyWeather;
 const styles = StyleSheet.create({
-    item: {
+    listContainer: {
         flex: 1,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
+        flexDirection: 'row',
+        width: '100%',
+    },
+    listItem: {
+        flex: 1,
+        width: '33%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 10,
         padding: 10,
-        marginVertical: 8,
-        marginHorizontal: 16,
         borderRadius: 5,
         borderWidth: 1,
         borderColor: "#ccc",
+        marginHorizontal: 6,
     },
-})
+    hourly: {
+
+        borderRadius: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+    },
+    hourlyText: {
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    listItemText: {
+        fontSize: 16,
+    },
+    font: {
+        color:'white',
+    }})
