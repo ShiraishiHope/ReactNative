@@ -22,28 +22,71 @@ const WeeklyWeather = ({data}) => {
         }
 
     }
+    const weeklyDayIcon = (dayIndex) => {
+        switch (dayIndex){
+            case 0:
+                return "01d";
+            case 1:
+            case 2:
+            case 3:
+                return "02d";
+            case 45:
+            case 48:
+                return "50d";
+            case 51:
+            case 53:
+            case 55:
+            case 56:
+            case 57:
+            case 80:
+            case 81:
+            case 82:
+                return "09d";
+            case 61:
+            case 63:
+            case 65:
+            case 66:
+            case 67:
+                return "10d";
+            case 71:
+            case 73:
+            case 75:
+            case 77:
+            case 85:
+            case 86:
+                return "13d";
+            case 95:
+            case 96:
+            case 99:
+                return "11d";
+        }
+
+    }
+    console.log("HELP: "+data.daily.time.length)
     useEffect(() => {
-        const weatherData = data.list.slice(0,8).map((item, i) => ({
-
+        const dailyData = []
+       for (let i = 0; i<data.daily.time.length; i++){
+            dailyData[i] = {
             "id": i,
+            "day": weeklyDay(new Date(data.daily.time[i]).getDay()),
+            "weathercode": weeklyDayIcon(data.daily.weathercode[i]),
+            "minTemp": data.daily.temperature_2m_min[i],
+            "maxTemp": data.daily.temperature_2m_max[i]
+            }
+       }
+       console.log(dailyData)
+        setWeeklyWeather(dailyData);
+    }, [])
 
-            "day": weeklyDay(new Date(item.dt*1000).getDay()),
-            "hour": new Date(item.dt*1000).getHours(),
-            "temp": Math.round(item.main.temp),
-            "humidity": item.main.humidity,
-            "weather": item.weather[0].description,
-            "weatherIcon": item.weather[0].icon
-        }));
-        setWeeklyWeather(weatherData);
-    }, [data]);
 
     const renderItem = ({item}) => {
         return (
             <View style={styles.listItem}>
-                <Text style={styles.font}>{item.hour}H</Text>
-                <Text style={styles.listItemText}  style={styles.font}>{item.temp}°C</Text>
-                <Text style={styles.listItemText}  style={styles.font}>{item.humidity}%</Text>
-                <Image source={{uri: getIcon(item.weatherIcon)}} style={{width: 30, height: 30}} />
+                <Text style={[styles.listItemText, styles.font]}>{item.day}</Text>
+                <Image source={{uri: getIcon(item.weathercode)}} style={{width: 30, height: 30}} />
+                <Text style={[styles.listItemText, styles.font]}>{item.minTemp}°C</Text>
+                <View style={styles.diagonalLine}></View>
+                <Text style={[styles.listItemText, styles.font]}>{item.maxTemp}°C</Text>
             </View>
         );
     }
@@ -51,7 +94,7 @@ const WeeklyWeather = ({data}) => {
     return (
         <>
             <View style={styles.hourly}>
-                <Text style={styles.hourlyText} style={styles.font}>Hourly</Text>
+                <Text style={styles.hourlyText} style={styles.font}>Weekly</Text>
             </View>
             <View style={styles.listContainer}>
                 <FlatList
@@ -78,18 +121,17 @@ const styles = StyleSheet.create({
         width: '33%',
         alignItems: 'center',
         justifyContent: 'center',
-
-        paddingHorizontal: 10,
-        borderRadius: 5,
+        paddingHorizontal: 1,
+        borderRadius: 10,
         borderWidth: 1,
         borderColor: "#ccc",
-        marginHorizontal: 6,
+        marginHorizontal: 2,
     },
     hourly: {
 
         borderRadius: 5,
         paddingVertical: 10,
-        paddingHorizontal: 20,
+        paddingHorizontal: 5,
     },
     hourlyText: {
         fontSize: 16,
@@ -100,4 +142,16 @@ const styles = StyleSheet.create({
     },
     font: {
         color:'white',
-    }})
+    },
+    diagonalLine: {
+
+
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderColor: 'white',
+        width: '1%',
+        height: '20%',
+        transform: [{ rotate: '90deg' }]
+    }
+
+})

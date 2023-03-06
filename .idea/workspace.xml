@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9219b4e5-afc0-48ae-9818-d364430770e8" name="Changes" comment="readme update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Meteo/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Meteo/package-lock.json" afterDir="false" />
-    </list>
+    <list default="true" id="9219b4e5-afc0-48ae-9818-d364430770e8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +27,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Coding/Projects/ReactNative&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Volumes/THAWSPACE/Lessons/ReactNative&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -63,42 +60,19 @@
       <updated>1677147608762</updated>
       <workItem from="1677147610127" duration="98000" />
       <workItem from="1677603322654" duration="57000" />
-      <workItem from="1677787844570" duration="44000" />
-      <workItem from="1677787899207" duration="670000" />
-      <workItem from="1677795418451" duration="354000" />
-      <workItem from="1677795798025" duration="1155000" />
-      <workItem from="1677865264837" duration="1018000" />
-      <workItem from="1678041366293" duration="1657000" />
+      <workItem from="1677771601240" duration="24000" />
+      <workItem from="1677830299709" duration="12057000" />
+      <workItem from="1677859301534" duration="271000" />
+      <workItem from="1678090093331" duration="326000" />
     </task>
-    <task id="LOCAL-00001" summary="readme update">
-      <created>1677795728722</created>
+    <task id="LOCAL-00001" summary="V2.0.0: forecast">
+      <created>1677859338467</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1677795728722</updated>
+      <updated>1677859338467</updated>
     </task>
-    <task id="LOCAL-00002" summary="readme update">
-      <created>1677795906889</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1677795906889</updated>
-    </task>
-    <task id="LOCAL-00003" summary="readme update">
-      <created>1677796010600</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1677796010600</updated>
-    </task>
-    <task id="LOCAL-00004" summary="readme update">
-      <created>1677796249911</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1677796249911</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,8 +90,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="readme update" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme update" />
+    <MESSAGE value="V2.0.0: forecast" />
+    <option name="LAST_COMMIT_MESSAGE" value="V2.0.0: forecast" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

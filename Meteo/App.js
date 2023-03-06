@@ -5,28 +5,52 @@ import * as Location from "expo-location";
 import axios from "axios";
 import WeeklyWeather from "./components/WeeklyWeather";
 import CurrentWeather from "./components/CurrentWeather";
+import DailyWeather from "./components/DailyWeather";
 import {Dimensions} from 'react-native';
 
 const { width, height } = Dimensions.get('window')
 const forecastApiUrl = (lat, lon) => `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=f21195c07b10c55ee15a8f363c1b3713&units=metric`;
 const weatherApiUrl = (lat,lon) => `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f21195c07b10c55ee15a8f363c1b3713&units=metric`;
-
+const dailyApiUrl = (lat,lon, day1, day6) => `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto&start_date=${day1}&end_date=${day6}`;
 export default function App() {
     const [loadingForecast, setLoadingForecast] = useState(true)
     const [loadingWeather, setLoadingWeather] = useState(true)
+    const [loadingDailyTemp, setLoadingDailyTemp] = useState(true)
     const [forecastData, setForecastData] = useState(null)
     const [weatherData, setWeatherData] = useState(null)
+    const [dailyTempData, setDailyTempData] = useState(null)
+    const [day1, setDay1] = useState(new Date().toISOString().split('T')[0])
+    const [day6, setDay6] = useState(() => {
+        const dayPlus6 = new Date();
+        dayPlus6.setDate(new Date().getDate() + 6);
+        return dayPlus6.toISOString().split('T')[0];
+    })
+
 
 
     useEffect(() => {
+        const tomorrow = new Date()
+        tomorrow.setDate(new Date().getDate() + 1)
+        const isoTomorrow = tomorrow.toISOString().split('T')[0]
+        setDay1(isoTomorrow)
+
+        const dayPlus6 = new Date()
+        dayPlus6.setDate(new Date().getDate() + 6)
+        const isoDay6 = dayPlus6.toISOString().split('T')[0]
+        setDay6(isoDay6)
         const getCoordinates = async () => {
             const {status} = await Location.requestForegroundPermissionsAsync()
             if (status !== "granted") {
                 return
             }
+
+
             const userLocation = await Location.getCurrentPositionAsync()
             getWeather(userLocation)
             getForecast(userLocation)
+            getDailyTemp(userLocation,day1,day6)
+
+
         }
         getCoordinates()
     }, [])
@@ -49,27 +73,38 @@ export default function App() {
             console.log("getWeather crashed. You did something wrong")
         }
     }
+    const getDailyTemp = async (location, dayOne, daySix) => {
+        try {
 
-    if (loadingForecast || loadingWeather) {
+            const DailyTempResponse = await axios.get(dailyApiUrl(location.coords.latitude, location.coords.longitude, dayOne, daySix))
+            console.log("DailyTemp:",DailyTempResponse.data)
+            setDailyTempData(DailyTempResponse.data)
+            setLoadingDailyTemp(false)
+        } catch (error) {
+            console.log("getDailyTemp crashed. You did something wrong")
+        }
+    }
+
+    if (loadingForecast || loadingWeather || loadingDailyTemp) {
         return <View>
-            <ActivityIndicator/>
+            <ActivityIndicator />
         </View>
     }
     return (
         <View style={styles.container}>
             <LinearGradient
-                colors={['rgba(22, 65, 146, 1)', 'rgba(58, 112, 180, 1)']}
+                colors={['rgba(22, 65, 146, 1)', 'rgba(58, 112, 250, 1)']}
                 style={styles.gradient}
             />
             <View style={styles.upper}>
                 <CurrentWeather data={weatherData} />
             </View>
             <View style={styles.middle}>
-                <WeeklyWeather data={forecastData} />
+                <DailyWeather data={forecastData} />
             </View>
-{/*            <View style={styles.lower}>
-                <WeeklyWeather data={forecastData} />
-            </View>*/}
+           <View style={styles.lower}>
+                <WeeklyWeather data={dailyTempData} />
+            </View>
         </View>
     )
 }
@@ -113,7 +148,7 @@ const styles = StyleSheet.create({
 
         height: '25%',
         flexDirection:'column',
-        paddingHorizontal: 20,
+        paddingHorizontal: 5,
         paddingVertical:10,
     },
 
