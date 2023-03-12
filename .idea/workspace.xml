@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9219b4e5-afc0-48ae-9818-d364430770e8" name="Changes" comment="" />
+    <list default="true" id="9219b4e5-afc0-48ae-9818-d364430770e8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cockatriss/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cockatriss/.idea/Cockatriss.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cockatriss/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cockatriss/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cockatriss/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cockatriss/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cockatriss/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cockatriss/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReactNative.iml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,21 +49,6 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="ReactNative" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="ReactNative" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -68,6 +64,9 @@
       <workItem from="1677859301534" duration="271000" />
       <workItem from="1678090093331" duration="326000" />
       <workItem from="1678353145457" duration="966000" />
+      <workItem from="1678361101536" duration="35000" />
+      <workItem from="1678361259872" duration="117000" />
+      <workItem from="1678361382150" duration="21000" />
     </task>
     <task id="LOCAL-00001" summary="V2.0.0: forecast">
       <created>1677859338467</created>
