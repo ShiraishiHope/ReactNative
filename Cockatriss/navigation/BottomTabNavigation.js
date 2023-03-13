@@ -6,8 +6,40 @@ import { Ionicons } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
 import ListScreen from "../screens/ListScreen";
 import RandomScreen from "../screens/RandomScreen";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
 const BottomTab = createBottomTabNavigator();
+
+function HomeStack() {
+    const Stack = createNativeStackNavigator();
+    return (
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+            <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        </Stack.Navigator>
+    );
+}
+
+function RandomStack() {
+    const Stack = createNativeStackNavigator();
+    return (
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+            <Stack.Screen
+                name="RandomScreen"
+                component={RandomScreen}
+
+            />
+        </Stack.Navigator>
+    );
+}
+
+function ListStack() {
+    const Stack = createNativeStackNavigator();
+    return (
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+            <Stack.Screen name="ListScreen" component={ListScreen} />
+        </Stack.Navigator>
+    );
+}
 
 export default function BottomTabNavigation() {
     return (
@@ -15,10 +47,11 @@ export default function BottomTabNavigation() {
             screenOptions={{
                 activeTintColor: 'blue',
                 inactiveTintColor: 'gray',
-            }}>
+            }}
+        >
             <BottomTab.Screen
                 name="Home"
-                component={HomeScreen}
+                component={HomeStack}
                 options={{
                     tabBarLabel: 'Home',
                     tabBarIcon: ({ color, size }) => (
@@ -28,7 +61,7 @@ export default function BottomTabNavigation() {
             />
             <BottomTab.Screen
                 name="Surprise Me"
-                component={RandomScreen}
+                component={RandomStack}
                 options={{
                     tabBarLabel: 'Random',
                     tabBarIcon: ({ color, size }) => (
@@ -38,7 +71,7 @@ export default function BottomTabNavigation() {
             />
             <BottomTab.Screen
                 name="Search"
-                component={ListScreen}
+                component={ListStack}
                 options={{
                     tabBarLabel: 'List',
                     tabBarIcon: ({ color, size }) => (
