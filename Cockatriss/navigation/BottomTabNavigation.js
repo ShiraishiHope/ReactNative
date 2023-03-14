@@ -7,6 +7,7 @@ import HomeScreen from "../screens/HomeScreen";
 import ListScreen from "../screens/ListScreen";
 import RandomScreen from "../screens/RandomScreen";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import DetailScreen from "../screens/DetailScreen";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -28,6 +29,11 @@ function RandomStack() {
                 component={RandomScreen}
 
             />
+            <Stack.Screen
+                name="DetailScreen"
+                component={DetailScreen}
+
+            />
         </Stack.Navigator>
     );
 }
@@ -36,7 +42,7 @@ function ListStack() {
     const Stack = createNativeStackNavigator();
     return (
         <Stack.Navigator screenOptions={{headerShown: false}}>
-            <Stack.Screen name="ListScreen" component={ListScreen} />
+            <Stack.Screen name="ListScreen" component={ListScreen}/>
         </Stack.Navigator>
     );
 }
@@ -60,7 +66,7 @@ export default function BottomTabNavigation() {
                 }}
             />
             <BottomTab.Screen
-                name="Surprise Me"
+                name="RandomStack"
                 component={RandomStack}
                 options={{
                     tabBarLabel: 'Random',

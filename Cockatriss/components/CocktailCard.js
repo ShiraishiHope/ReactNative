@@ -6,7 +6,9 @@ const cardWidth = (width - 40) / 2;
 
 export default function CocktailCard({ navigation, cocktail }) {
     return (
-        <TouchableOpacity onPress={() => navigation.navigate('Details', { cocktail })}>
+        <TouchableOpacity onPress={() => navigation.navigate('RandomStack', {
+            screen: 'DetailScreen',
+            params: {cocktail}})}>
             <View style={[styles.cardContainer, styles.card]}>
                 <Image source={{ uri: cocktail.image }} style={styles.cardImage} />
                 <View style={styles.cardContent}>
