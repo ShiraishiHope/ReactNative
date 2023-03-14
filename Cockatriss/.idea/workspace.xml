@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6cd6b33f-9cc3-4369-9cdb-42ef84726662" name="Changes" comment="V1.1.3: Still some issues to fix.">
+      <change beforePath="$PROJECT_DIR$/screens/ListScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ListScreen.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Mm8THTCIVM6QIBLtzvcV5XB5ra" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ryan/IdeaProjects/ReactNative/Cockatriss/screens&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/screens" />
+      <recent name="$PROJECT_DIR$/navigation" />
+      <recent name="$PROJECT_DIR$/components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/screens" />
+      <recent name="$PROJECT_DIR$/navigation" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6cd6b33f-9cc3-4369-9cdb-42ef84726662" name="Changes" comment="" />
+      <created>1678361403095</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678361403095</updated>
+      <workItem from="1678361404226" duration="1960000" />
+      <workItem from="1678370408537" duration="131000" />
+      <workItem from="1678436733674" duration="14897000" />
+      <workItem from="1678635551500" duration="6758000" />
+      <workItem from="1678648451880" duration="5528000" />
+      <workItem from="1678656050570" duration="8793000" />
+      <workItem from="1678695073470" duration="600000" />
+      <workItem from="1678714684598" duration="2900000" />
+      <workItem from="1678728952228" duration="6648000" />
+      <workItem from="1678739708091" duration="12008000" />
+      <workItem from="1678788901544" duration="3652000" />
+      <workItem from="1678814763614" duration="9315000" />
+      <workItem from="1678833886332" duration="659000" />
+    </task>
+    <task id="LOCAL-00001" summary="V0.1.0: Randomly getting one cocktail">
+      <created>1678661081505</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678661081505</updated>
+    </task>
+    <task id="LOCAL-00002" summary="V1.0.0: Infinite Scroll Random Cocktails">
+      <created>1678747242621</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678747242621</updated>
+    </task>
+    <task id="LOCAL-00003" summary="V1.1.2: Search by ingredient working">
+      <created>1678830064974</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678830064974</updated>
+    </task>
+    <task id="LOCAL-00004" summary="V1.1.3: Still some issues to fix.">
+      <created>1678833440376</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678833440376</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="V0.1.0: Randomly getting one cocktail" />
+    <MESSAGE value="V1.0.0: Infinite Scroll Random Cocktails" />
+    <MESSAGE value="V1.1.1: list" />
+    <MESSAGE value="V1.1.2: Search by ingredient working" />
+    <MESSAGE value="V1.1.3: Still some issues to fix." />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.1.3: Still some issues to fix." />
+  </component>
+</project>
