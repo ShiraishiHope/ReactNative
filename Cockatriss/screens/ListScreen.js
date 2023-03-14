@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import React, {useState} from 'react';
+import {ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image} from 'react-native';
 
 const ListScreen = () => {
     const [selectedSearchType, setSelectedSearchType] = useState(null);
@@ -21,7 +21,7 @@ const ListScreen = () => {
     };
     const handleIngredientValidationPress = async () => {
         try {
-            const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`);
+            const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchInput}`);
             const data = await response.json();
             setSearchResults(data.drinks);
         } catch (error) {
@@ -33,53 +33,85 @@ const ListScreen = () => {
         if (selectedSearchType === 'search-name') {
             return (
                 <View style={styles.searchInputContainer}>
-                    <TextInput style={styles.searchInput} placeholder={`Search by ${selectedSearchType}`}
-                               onChangeText={setSearchInput} value={searchInput}/>
-                    <TouchableOpacity style={styles.validationButton} onPress={handleNameValidationPress}>
+                    <TextInput
+                        style={styles.searchInput}
+                        placeholder={`Search by ${selectedSearchType}`}
+                        onChangeText={setSearchInput}
+                        value={searchInput}
+                    />
+                    <TouchableOpacity
+                        style={styles.validationButton}
+                        onPress={handleNameValidationPress}
+                    >
                         <Text style={styles.validationButtonText}>Search</Text>
                     </TouchableOpacity>
+                    {searchResults.length > 0 && (
+                        <ScrollView contentContainerStyle={styles.searchResultsContainer}>
+                            {searchResults.map((result) => (
+                                <SearchResult key={result.idDrink} result={result} />
+                            ))}
+                        </ScrollView>
+                    )}
                 </View>
             );
         }
         return null;
     };
-        const renderIngredientSearchInput = () => {
-            if (selectedSearchType === 'search-ingredient') {
-                return (
-                    <View style={styles.searchInputContainer}>
-                        <TextInput style={styles.searchInput} placeholder={`Search by ${selectedSearchType}`}
-                                   onChangeText={setSearchInput} value={searchInput}/>
-                        <TouchableOpacity style={styles.validationButton} onPress={handleIngredientValidationPress}>
-                            <Text style={styles.validationButtonText}>Search</Text>
-                        </TouchableOpacity>
-                    </View>
-                );
-            }
-            return null;
-        };
 
+    const renderIngredientSearchInput = () => {
+        if (selectedSearchType === 'search-ingredient') {
+            return (
+                <View style={styles.searchInputContainer}>
+                    <TextInput style={styles.searchInput} placeholder={`Search by ${selectedSearchType}`}
+                               onChangeText={setSearchInput} value={searchInput}/>
+                    <TouchableOpacity style={styles.validationButton} onPress={handleIngredientValidationPress}>
+                        <Text style={styles.validationButtonText}>Search</Text>
+                    </TouchableOpacity>
+                    <ScrollView contentContainerStyle={styles.searchResultsContainer}>
+                        {searchResults.map((result) => (
+                            <SearchResult key={result.idDrink} result={result}/>
+                        ))}
+                    </ScrollView>
+                </View>
+            );
+        }
+        return null;
+    };
+    const SearchResult = ({result}) => {
+        return (
+            <View style={styles.searchResultCard}>
+                <Image source={{uri: result.strDrinkThumb}} style={styles.searchResultImage}/>
+                <Text style={styles.searchResultTitle}>{result.strDrink}</Text>
+                <Text style={styles.searchResultDescription}>{result.strInstructions}</Text>
+            </View>
+        );
+    };
 
     return (
         <View style={styles.container}>
-
-            <View style={styles.buttonRow}>
-                <TouchableOpacity
-                    style={selectedSearchType === 'search-ingredient' ? styles.selectedButton : styles.button}
-                    onPress={() => handleSearchTypePress('search-ingredient')}>
-                    <Text style={selectedSearchType === 'search-ingredient' ? styles.selectedButtonText : styles.buttonText}>
-                        Search by Ingredient
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={selectedSearchType === 'search-name' ? styles.selectedButton : styles.button}
-                    onPress={() => handleSearchTypePress('search-name')}>
-                    <Text style={selectedSearchType === 'search-name' ? styles.selectedButtonText : styles.buttonText}>
-                        Search by name
-                    </Text>
-                </TouchableOpacity>
+            <View>
+                <View style={styles.buttonRow}>
+                    <TouchableOpacity
+                        style={selectedSearchType === 'search-ingredient' ? styles.selectedButton : styles.button}
+                        onPress={() => handleSearchTypePress('search-ingredient')}>
+                        <Text
+                            style={selectedSearchType === 'search-ingredient' ? styles.selectedButtonText : styles.buttonText}>
+                            Search by Ingredient
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={selectedSearchType === 'search-name' ? styles.selectedButton : styles.button}
+                        onPress={() => handleSearchTypePress('search-name')}>
+                        <Text
+                            style={selectedSearchType === 'search-name' ? styles.selectedButtonText : styles.buttonText}>
+                            Search by name
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+                {renderNameSearchInput()}
+                {renderIngredientSearchInput()}
             </View>
-            {renderNameSearchInput()}
-            {renderIngredientSearchInput()}
+
             <View style={styles.searchResultsContainer}>
                 {searchResults.map((result) => (
                     <Text key={result.idDrink}>{result.strDrink}</Text>
@@ -94,6 +126,27 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    searchResultCard: {
+        backgroundColor: 'white',
+        borderRadius: 10,
+        padding: 10,
+        margin: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    searchResultImage: {
+        width: 50,
+        height: 50,
+        marginRight: 10,
+    },
+    searchResultTitle: {
+        fontWeight: 'bold',
+        fontSize: 16,
+    },
+    searchResultDescription: {
+        fontSize: 14,
+        marginTop: 5,
     },
     buttonRow: {
         flexDirection: 'row',
