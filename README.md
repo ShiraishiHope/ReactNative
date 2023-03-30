@@ -1,3 +1,5 @@
+Devoir:
+
 Toutes les apps sont rendus avant la deadline et n'ont pas été retouché, donc pas besoin de chercher un commit
 =============================\
 ========= TODO LIST =========\
@@ -18,8 +20,8 @@ En bonus, il y'a un call à une deuxième API OpenMeteo pour les temperatures mi
 ========= COCKTAIL =========\
 =========================\
 \
-L'app remplie toutes les instructions principales même si la présentation laisse à désirer sur certaines pages (manque de temps)\
+L'app remplie toutes les instructions principales même si la présentation n'est pas aboutie\
 La tab Navigation Bar est présente\
 La page Random est la plus aboutie, avec la page de détail.\
-La page Liste est l'autre page de mon choix et permet de faire une recherche par nom et par ingrédients, mais le visuel est manquant par manque de temps.\
+La page Liste est l'autre page de mon choix et permet de faire une recherche par nom et par ingrédients, mais le visuel n'est pas complet.\
 Le seul élément facultatif est la recherche par ingrédients.\
